@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.hachatml.cocktaillooker.Screens.RandomButtonScreen
 import com.hachatml.cocktaillooker.ui.theme.CocktailLookerTheme
 import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 
@@ -31,10 +32,7 @@ class MainActivity : ComponentActivity() {
                         verticalArrangement = Arrangement.Center,
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
-                        Text(text = "¿Nos bebemos algo, máquina?")
-                        Button(onClick = { /*TODO*/ }) {
-                            Text(text = "Ofréceme")
-                        }
+                        RandomButtonScreen()
                     }
                 }
             }
