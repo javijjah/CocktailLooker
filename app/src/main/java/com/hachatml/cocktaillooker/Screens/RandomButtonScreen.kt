@@ -11,7 +11,7 @@ import androidx.navigation.NavController
 import com.hachatml.cocktaillooker.RandomButtonViewModel
 
 val VM = RandomButtonViewModel()
-
+//La pantalla inicial que nos muestra el botón para buscar de forma aleatoria
 @Composable
 fun RandomButtonScreen(navController: NavController) {
     Column(

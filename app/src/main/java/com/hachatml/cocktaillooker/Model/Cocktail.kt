@@ -1,9 +1,16 @@
 package com.hachatml.cocktaillooker.Model
 
+/**
+ * Almacena la respuesta de la API como una lista de Cocktails, que será lo que devuelva
+ * en cualquier caso.
+ */
 data class CocktailResponse(
     val drinks: List<Cocktail>
 )
 
+/**
+ * Almacena la información de los Cocktails recogida por Retrofit.
+ */
 data class Cocktail(
     val idDrink: String,
     val strDrink: String,

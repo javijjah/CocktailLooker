@@ -15,14 +15,22 @@ import com.hachatml.cocktaillooker.NavHost.Routes
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+/**
+ * El ViewModel de nuestra app
+ */
 class RandomButtonViewModel : ViewModel() {
+    //Nuestra instancia de Retrofit
     private val cocktailApiService = RetrofitInstance.RetrofitInstance.api
+    //Gestión de la pantalla de carga
     var isLoading by mutableStateOf(false)
     var Cocktails: MutableState<List<Cocktail>> = mutableStateOf(emptyList())
     fun getCocktail() {
         viewModelScope.launch {
             try {
+                //respuesta de la API recogida en esta variable
                 val response = cocktailApiService.getRandomCocktail()
+                //Aplicamos al Singleton la información del primer resultado, ya que
+                //en este caso sólo obtenemos 1 aleatorio.
                 CocktailCargado.CocktailCargado.CocktailActivo = response.drinks[0]
                 println("Datos de la API recogidos correctamente")
             } catch (e: Exception) {
@@ -31,12 +39,12 @@ class RandomButtonViewModel : ViewModel() {
             }
         }
     }
-
+    //Acción del botón y carga de la pantalla siguiente
     fun RandomButtonPressed(navController: NavController) {
         viewModelScope.launch {
-            getCocktail()
             isLoading = true
-            delay(3000)
+            getCocktail()
+            delay(1000)
             isLoading = false
             navController.navigate(Routes.BebidaCargada.route)
         }

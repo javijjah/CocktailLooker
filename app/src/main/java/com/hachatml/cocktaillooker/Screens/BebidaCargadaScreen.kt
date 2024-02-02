@@ -10,7 +10,7 @@ import coil.compose.AsyncImage
 import com.hachatml.cocktaillooker.Model.CocktailCargado
 import com.hachatml.cocktaillooker.Model.CocktailResponse
 import com.hachatml.cocktaillooker.RandomButtonViewModel
-
+//Screen cuando hemos buscado un Cocktail
 @Composable
 fun BebidaCargadaScreen(navController: NavController) {
     Column(
@@ -20,7 +20,7 @@ fun BebidaCargadaScreen(navController: NavController) {
         BebidaCargada(viewModel = VM)
     }
 }
-
+//La información recogida del Singleton presentada en el composable si está disponible.
 @Composable
 fun BebidaCargada(viewModel: RandomButtonViewModel) {
     Column(

@@ -34,6 +34,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
+                    //Un NavHost como los que hemos usado hasta ahora
                     val navController = rememberNavController()
                     NavHost(
                         navController = navController,
